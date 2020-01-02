@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxj.order.dao.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.jxj.order.entity.vo.OrderVO">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="item" jdbcType="VARCHAR" property="item" />
+        <result column="price" jdbcType="DOUBLE" property="price" />
+        <result column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
+        <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        `id`, `item`, `price`, `user_id`, `created_date`, `modified_date`, `remark`
+    </sql>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from `order` where `id` = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.jxj.order.entity.vo.OrderVO">
+        insert into `order`(`id`, `item`, `price`, `user_id`, `created_date`, `modified_date`, `remark`)
+        values(#{id,jdbcType=BIGINT}, #{item,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{userId,jdbcType=BIGINT}, #{createdDate,jdbcType=TIMESTAMP}, #{modifiedDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.jxj.order.entity.vo.OrderVO">
+        insert into `order`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                `id`,
+            </if>
+            <if test="item != null">
+                `item`,
+            </if>
+            <if test="price != null">
+                `price`,
+            </if>
+            <if test="userId != null">
+                `user_id`,
+            </if>
+            <if test="createdDate != null">
+                `created_date`,
+            </if>
+            <if test="modifiedDate != null">
+                `modified_date`,
+            </if>
+            <if test="remark != null">
+                `remark`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="item != null">
+                #{item,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="createdDate != null">
+                #{createdDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifiedDate != null">
+                #{modifiedDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from `order`
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="select" parameterType="com.jxj.order.entity.vo.OrderVO" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from `order`
+        where 1=1
+        <if test="userId != null">
+            and user_id = #{userId,jdbcType=BIGINT}
+        </if>
+    </select>
+</mapper>
