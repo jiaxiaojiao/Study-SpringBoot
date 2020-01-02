@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jxj.order.dao.mapper.OrderMapper">
     <resultMap id="BaseResultMap" type="com.jxj.order.entity.vo.OrderVO">
-        <id column="id" jdbcType="BIGINT" property="id" />
-        <result column="item" jdbcType="VARCHAR" property="item" />
-        <result column="price" jdbcType="DOUBLE" property="price" />
-        <result column="user_id" jdbcType="BIGINT" property="userId" />
-        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate" />
-        <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate" />
-        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="item" jdbcType="VARCHAR" property="item"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="modified_date" jdbcType="TIMESTAMP" property="modifiedDate"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
     </resultMap>
     <sql id="Base_Column_List">
         `id`, `item`, `price`, `user_id`, `created_date`, `modified_date`, `remark`
@@ -71,13 +71,13 @@
     </insert>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from `order`
         where id = #{id,jdbcType=BIGINT}
     </select>
     <select id="select" parameterType="com.jxj.order.entity.vo.OrderVO" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List" />
+        <include refid="Base_Column_List"/>
         from `order`
         where 1=1
         <if test="userId != null">
