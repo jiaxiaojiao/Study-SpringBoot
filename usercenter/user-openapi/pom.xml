@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
         <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>user-interface</artifactId>
+    <artifactId>user-openapi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user-interface</name>
+    <name>user-openapi</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

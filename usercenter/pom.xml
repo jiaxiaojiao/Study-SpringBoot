@@ -18,7 +18,7 @@
     <modules>
         <module>user-entity</module>
         <module>user-dao</module>
-        <module>user-interface</module>
+        <module>user-openapi</module>
         <module>user-service</module>
         <module>user-web</module>
     </modules>
