@@ -20,8 +20,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @NacosValue(value = "${useLocalCache:false}", autoRefreshed = true)
-    private boolean useLocalCache; // 测试Nacos配置
+    @NacosValue(value = "${DEFAULT_USER_STATUS:1}", autoRefreshed = true)
+    private Integer userStatus; // 测试Nacos配置
 
     @ResponseBody
     @RequestMapping("/signIn")
@@ -37,7 +37,7 @@ public class UserController {
             UserVO u = new UserVO();
             u.setName(name);
             u.setPassword(password);
-
+            u.setStatus(userStatus);
             int i = userService.signIn(u);
             if (i >= 1) {
                 return ResultVO.success(i + "");
