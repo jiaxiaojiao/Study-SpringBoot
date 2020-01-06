@@ -29,6 +29,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- 接口项目 -->
+            <dependency>
+                <groupId>com.jxj</groupId>
+                <artifactId>user-openapi</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <!-- 子模块项目 -->
             <dependency>
                 <groupId>com.jxj</groupId>
                 <artifactId>order-entity</artifactId>
@@ -49,16 +56,19 @@
                 <artifactId>order-openapi</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
+            <!-- 持久层 -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>2.1.1</version>
             </dependency>
+            <!-- Json -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.60</version>
             </dependency>
+            <!-- 注册中心和配置中心 -->
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>nacos-config-spring-boot-starter</artifactId>
@@ -69,6 +79,7 @@
                 <artifactId>nacos-discovery-spring-boot-starter</artifactId>
                 <version>0.2.3</version>
             </dependency>
+            <!-- RPC - dubbo -->
             <dependency>
                 <groupId>com.alibaba.spring</groupId>
                 <artifactId>spring-context-support</artifactId>
@@ -78,6 +89,21 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>2.6.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>2.6.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>1.1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.44.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
