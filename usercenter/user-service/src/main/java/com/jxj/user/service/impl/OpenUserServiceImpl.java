@@ -1,5 +1,6 @@
 package com.jxj.user.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 
 import com.jxj.user.entity.vo.UserVO;
@@ -9,9 +10,8 @@ import com.jxj.user.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
+@Service(version = "${user.service.version}")
 public class OpenUserServiceImpl implements OpenUserService {
     private static Logger logger = LogManager.getLogger(OpenUserServiceImpl.class);
     @Autowired

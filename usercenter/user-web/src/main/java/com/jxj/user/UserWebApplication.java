@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@NacosPropertySource(dataId = "user.example", autoRefreshed = true)
+//@NacosPropertySource(dataId = "user.example", autoRefreshed = true)
 @EnableDubbo(scanBasePackages = "com.jxj.user.service")
 public class UserWebApplication {
 
