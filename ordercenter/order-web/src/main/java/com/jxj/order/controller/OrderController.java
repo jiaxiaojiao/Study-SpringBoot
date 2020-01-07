@@ -29,8 +29,8 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-//    @Reference(version = "${user.service.version}")
-//    private OpenUserService openUserService;
+    @Reference(version = "${user.service.version}")
+    private OpenUserService openUserService; // Reference注解引用服务
 
     @NacosInjected
     private NamingService namingService;
@@ -77,10 +77,10 @@ public class OrderController {
 
     private boolean verifyUser(Long userId){
         // 验证用户的真实有效性
-//        ResultDTO resultDTO = openUserService.getUser(userId);
-//        if (resultDTO.getCode().equals(ResultDTO.SUCCESS) && !resultDTO.getData().isEmpty()) {
-//            return true;
-//        }
+        ResultDTO resultDTO = openUserService.getUser(userId);
+        if (resultDTO.getCode().equals(ResultDTO.SUCCESS) && !resultDTO.getData().isEmpty()) {
+            return true;
+        }
         return false;
     }
 }
