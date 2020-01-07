@@ -11,6 +11,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * Service注解暴露服务
+ */
 @Service(version = "${user.service.version}")
 public class OpenUserServiceImpl implements OpenUserService {
     private static Logger logger = LogManager.getLogger(OpenUserServiceImpl.class);
