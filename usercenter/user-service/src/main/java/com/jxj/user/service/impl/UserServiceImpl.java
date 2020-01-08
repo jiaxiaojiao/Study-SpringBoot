@@ -45,11 +45,6 @@ public class UserServiceImpl implements UserService {
 
     private Integer findUserStatus(Long userId){
         // TODO 调用远程接口，如果有订单
-//        ResultVO result = orderService.getUserOrderNum(userId);
-//        if (result.getCode().equals(200)){
-//            int i = Integer.parseInt(result.getData());
-//            if (i > 0) return UserVO.Status_Valid;
-//        }
         return UserVO.Status_Invalid;
     }
 }

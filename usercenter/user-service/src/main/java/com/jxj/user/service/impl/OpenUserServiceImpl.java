@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Service注解暴露服务
+ * [Dubbo] Service注解暴露服务
  */
 @Service(version = "${user.service.version}")
 public class OpenUserServiceImpl implements OpenUserService {
