@@ -10,6 +10,7 @@ import com.jxj.user.entity.vo.ResultVO;
 import com.jxj.user.entity.vo.UserVO;
 import com.jxj.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,9 @@ public class UserController {
 
     @NacosInjected
     private NamingService namingService;
+
+    @Value("${server.port}")
+    private String port;
 
     @RequestMapping(value = "/get", method = GET)
     @ResponseBody
@@ -70,7 +74,7 @@ public class UserController {
         // 用户列表
         try {
             List<UserVO> list = userService.list();
-            return ResultVO.success(JSON.toJSONString(list));
+            return ResultVO.success(JSON.toJSONString(list) + ", form " + port);
         } catch (Exception e) {
             return ResultVO.error(ResultVO.EXCEPTION, e.getMessage());
         }
