@@ -1,6 +1,5 @@
 package com.jxj.order.service.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.jxj.order.dao.mapper.OrderMapper;
 import com.jxj.order.entity.vo.OrderVO;
 import com.jxj.order.openapi.OpenOrderService;
