@@ -6,7 +6,6 @@
         <groupId>com.jxj</groupId>
         <artifactId>usercenter</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
     <artifactId>user-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -31,11 +30,13 @@
             <groupId>com.jxj</groupId>
             <artifactId>user-openapi</artifactId>
         </dependency>
+
         <!-- JSON -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
+
         <!-- 日志 log -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -45,6 +46,7 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
         </dependency>
+
         <!-- RPC dubbo -->
         <dependency>
             <groupId>com.alibaba.spring</groupId>

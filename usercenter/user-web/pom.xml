@@ -6,8 +6,8 @@
         <groupId>com.jxj</groupId>
         <artifactId>usercenter</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <!--<relativePath/>--> <!-- lookup parent from repository -->
     </parent>
+
     <artifactId>user-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>user-web</name>
@@ -26,33 +26,36 @@
             <groupId>com.jxj</groupId>
             <artifactId>user-service</artifactId>
         </dependency>
+
         <!-- 数据库连接-mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <!-- Spring Boot dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- Feign -->
         <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <!-- 借助 Micrometer 对接 Prometheus 监控系统 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-discovery-spring-boot-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-discovery-spring-boot-autoconfigure</artifactId>
-        </dependency>
+
         <!-- RPC - dubbo -->
         <dependency>
             <groupId>com.alibaba.spring</groupId>
@@ -67,17 +70,8 @@
             <artifactId>dubbo-registry-nacos</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.nacos</groupId>
-            <artifactId>nacos-client</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-        </dependency>
-        <!-- Feign -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
     </dependencies>
 
