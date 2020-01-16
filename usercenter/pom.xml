@@ -95,38 +95,6 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
-            <!-- RPC - dubbo -->
-            <dependency>
-                <groupId>com.alibaba.spring</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>1.0.5</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>2.6.7</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>dubbo-registry-nacos</artifactId>
-                <version>2.6.7</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>4.1.44.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.boot</groupId>
-                <artifactId>nacos-discovery-spring-boot-actuator</artifactId>
-                <version>0.2.3</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.boot</groupId>
-                <artifactId>nacos-discovery-spring-boot-autoconfigure</artifactId>
-                <version>0.2.3</version>
-            </dependency>
-
             <!-- 借助 Micrometer 对接 Prometheus 监控系统 -->
             <dependency>
                 <groupId>io.micrometer</groupId>
